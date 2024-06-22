@@ -4,7 +4,7 @@ const mongoURI = process.env.MONGO_URL;
 
 const mongoDB = async () => {
     try {
-        await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(mongoURI, {});
         console.log("DB connected successfully");
 
         const fetchedData = await mongoose.connection.db.collection("food_items").find({}).toArray();
