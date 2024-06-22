@@ -4,7 +4,7 @@ const mongoURI = process.env.MONGO_URL;
 
 const mongoDB = async () => {
     try {
-        await mongoose.connect(mongoURI, { useUnifiedTopology: true });
+        await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log("DB connected successfully");
 
         const fetchedData = await mongoose.connection.db.collection("food_items").find({}).toArray();
@@ -13,8 +13,8 @@ const mongoDB = async () => {
         global.food_items = fetchedData;
         global.foodCategory = foodCategoryData;
 
-        // console.log("Fetched food items:", global.food_items);
-        // console.log("Fetched food categories:", global.foodCategory);
+       // console.log("Fetched food items:", global.food_items);
+        //console.log("Fetched food categories:", global.foodCategory);
 
     } catch (err) {
         console.error("DB CONNECTION ISSUES", err);
