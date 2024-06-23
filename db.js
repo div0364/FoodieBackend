@@ -6,8 +6,6 @@ const mongoURI = process.env.MONGO_URL;
 const mongoDB = async () => {
     try {
         await mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
             connectTimeoutMS: 10000,  // Set a connection timeout
             serverSelectionTimeoutMS: 10000  // Server selection timeout
         });
