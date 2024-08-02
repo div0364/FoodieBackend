@@ -5,9 +5,9 @@ require("dotenv").config();
 const port = process.env.PORT||6010;
 
 app.use(cors({
-    origin:["https://food-frontend-three.vercel.app/"],
+    origin:["https://foodfrontend-gx67.onrender.com"],
     methods:["GET","POST","PUT","DELETE","OPTIONS"],
-    allowedHeaders:['Content-Type','Authorization'],
+    allowedHeaders:['Content-Type','Authorization','application-json'],
     credentials:true,
 }));
 
