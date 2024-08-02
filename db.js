@@ -4,11 +4,14 @@ require('dotenv').config();
 const mongoURI = process.env.MONGO_URL;
 
 const mongoDB = async () => {
+    
     try {
+    
         await mongoose.connect(mongoURI, {
             connectTimeoutMS: 10000,  // Set a connection timeout
             serverSelectionTimeoutMS: 10000  // Server selection timeout
         });
+        
         console.log("DB connected successfully");
 
         // Fetch food items and food category data
@@ -24,6 +27,7 @@ const mongoDB = async () => {
         // console.log("Fetched food categories:", global.foodCategory);
 
     } catch (err) {
+        
         console.error("DB CONNECTION ISSUES", err.message);
         process.exit(1);
     }
