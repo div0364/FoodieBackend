@@ -1,8 +1,15 @@
 const express = require("express");
 const app = express();
-
+const cors =require("cors");
 require("dotenv").config();
 const port = process.env.PORT||6010;
+
+app.use(cors({
+    origin:["https://food-frontend-three.vercel.app/"],
+    methods:["GET","POST","PUT","DELETE","OPTIONS"],
+    allowedHeaders:['Content-Type','Authorization'],
+    credentials:true,
+}))
 
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin","https://food-frontend-three.vercel.app/");
