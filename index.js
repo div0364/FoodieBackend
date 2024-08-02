@@ -4,7 +4,7 @@ const app = express();
 require("dotenv").config();
 
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://food-frontend-three.vercel.app");
+    res.setHeader("Access-Control-Allow-Origin", "https://food-frontend-kevs7k44e-div0364s-projects.vercel.app/");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
     res.setHeader("Access-Control-Allow-Credentials", "true");
