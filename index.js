@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-
+const port=process.env.PORT;
 const mongoDB = require("./db");
 mongoDB();
 
@@ -23,5 +23,8 @@ app.use('/api/v1', require("./Routes/OrderData"));
 app.get('/', (req, res) => {
     res.send('hello world');
 });
+app.listen(port, () => {
+    console.log(`App is listening at http://localhost:${port}`);
+    });
 
 module.exports = app; // Export app for Vercel serverless functions
